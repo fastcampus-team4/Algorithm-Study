@@ -55,6 +55,7 @@ class Queue {
     } else {
       this.tail.next = nodeQueue;
     }
+
     this.tail = nodeQueue;
     this.size++;
   }
@@ -124,5 +125,6 @@ for (let i = 1; i < input.length; i++) {
       answer.push(queue.pop());
       break;
   }
+  console.log(queue);
 }
-console.log(answer);
+// console.log(answer.join('\n'));
