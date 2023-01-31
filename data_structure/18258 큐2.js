@@ -13,6 +13,8 @@ let queue = [];
 let result = [];
 
 for (let i = 1; i < array.length; i++) {
+  let head = 0;
+  let tail = 0;
   const command = array[i].trim().split(" ")[0];
   switch (command) {
     case "push":
