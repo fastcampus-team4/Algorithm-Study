@@ -32,4 +32,4 @@ while (people.length) {
   index += 1;
 }
 
-console.log(`<${answer.join(",")}>`);
+console.log(`<${answer.join(", ")}>`);
