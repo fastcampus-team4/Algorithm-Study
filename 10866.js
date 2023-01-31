@@ -37,14 +37,14 @@ class Deque {
 function solution(n, input) {
   const deque = new Deque();
   let result = [];
-  for (let i = 1; i <= parseInt(input[0]); i++) {
-    let s = input[i].split(' ');
-    switch (s[0]) {
+  for (let i = 0; i < n; i++) {
+    let command = input[i].split(' ')[0];
+    switch (command) {
       case 'push_back':
-        deque.push_back(parseInt(s[1]));
+        deque.push_back(Number(input[i].split(' ')[1]));
         break;
       case 'push_front':
-        deque.push_front(parseInt(s[1]));
+        deque.push_front(Number(input[i].split(' ')[1]));
         break;
       case 'pop_front':
         result.push(deque.pop_front());
@@ -65,6 +65,6 @@ function solution(n, input) {
         result.push(deque.back());
     }
   }
-  console.log(result.join('\n'));
+  return result.join('\n');
 }
-console.log(solution());
+console.log(solution(N, input));

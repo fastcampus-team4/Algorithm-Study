@@ -41,7 +41,7 @@ const N = Number(input);
 //   return answer;
 // }
 
-// 3. 연결리스트
+// 단일 연결리스트 노드 기본 구조
 class Node {
   constructor(value) {
     this.value = value;
@@ -50,6 +50,7 @@ class Node {
   }
 }
 
+// 연결리스트 기본 구조
 class LinkedList {
   constructor() {
     this.head = null;
@@ -90,7 +91,7 @@ class LinkedList {
 
 const cards = new LinkedList();
 
-for (let i = 1; i <= input; i++) {
+for (let i = 1; i <= N; i++) {
   cards.add(i);
 }
 
