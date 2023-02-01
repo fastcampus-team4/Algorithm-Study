@@ -33,4 +33,4 @@ for (let i = 1; i < input.length; i++) {
     }
 }
 
-console.log(answer.join('\n'));
+console.log(answer.join('\n')); 
