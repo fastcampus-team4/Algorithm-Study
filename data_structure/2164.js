@@ -13,6 +13,27 @@ const array = [...new Array(N)].map((v, i) => i + 1);
 //   queue = temp;
 // }
 
+// function solution(n) {
+//   let queue = [];
+//   let cnt = 0;
+//   let answer = 0;
+//   for (let i = 0; i < n; i++) {
+//     queue.push(i + 1);
+//   }
+//   console.log(queue);
+//   while (queue.length > 1) {
+//     cnt++;
+//     queue.push(queue[cnt]);
+//     cnt++;
+//     if (queue[queue.length - 1] === queue[queue.length - 2]) {
+//       answer = queue.pop();
+//       break;
+//     }
+//   }
+//   return answer;
+// }
+// console.log(solution(N));
+
 class NodeQueue {
   constructor(value) {
     this.next = null;
