@@ -1,5 +1,6 @@
 // https://www.acmicpc.net/problem/1935
 
+// 못품
 let filePath = process.platform === "linux" ? 0 : "./input.txt";
 let input = require("fs")
   .readFileSync(filePath)
