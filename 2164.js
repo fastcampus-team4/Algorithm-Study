@@ -94,7 +94,7 @@ const cards = new LinkedList();
 for (let i = 1; i <= N; i++) {
   cards.add(i);
 }
-
+console.log(cards);
 while (cards.getSize() !== 1) {
   cards.removeHead();
   cards.add(cards.getHead());
@@ -102,3 +102,64 @@ while (cards.getSize() !== 1) {
 }
 
 console.log(cards.getHead());
+
+// LinkedList { head: null, tail: null, _size: 0 }
+// //
+// LinkedList { 
+//   head: Node { value: 1, next: null, prev: null },
+//   tail: Node { value: 1, next: null, prev: null },
+//   _size: 1 }
+// //
+// LinkedList { 
+//   head: Node { value: 1, next: Node { value: 2, next: null, prev: [Circular] }, prev: null },
+//   tail: Node { value: 2, next: null, prev: Node { value: 1, next: [Circular], prev: null } },
+//   _size: 2 
+// }
+// //
+// LinkedList { 
+//   head: 
+//     Node { value: 1,
+//       next: 
+//       Node { value: 2,
+//         next: Node { value: 3, next: null, prev: [Circular] },
+//         prev: [Circular] },
+//       prev: null },
+//   tail: 
+//     Node { value: 3,
+//       next: null,
+//       prev: 
+//       Node { value: 2,
+//         next: [Circular],
+//         prev: Node { value: 1, next: [Circular], prev: null } } },
+//   _size: 3 
+// }
+// //
+// LinkedList { 
+//   head: 
+//     Node { value: 1,
+//       next: 
+//       Node { value: 2,
+//         next: 
+//           Node { value: 3,
+//             next: 
+//             Node { value: 4,
+//               next: Node { value: 5, next: [Object], prev: [Circular] },
+//               prev: [Circular] },
+//             prev: [Circular] },
+//         prev: [Circular] },
+//       prev: null },
+//   tail: 
+//     Node { value: 6,
+//       next: null,
+//       prev: 
+//       Node { value: 5,
+//         next: [Circular],
+//         prev: 
+//           Node { value: 4,
+//             next: [Circular],
+//             prev: 
+//             Node { value: 3,
+//               next: [Circular],
+//               prev: Node { value: 2, next: [Circular], prev: [Object] } } } } },
+//   _size: 6 
+// }

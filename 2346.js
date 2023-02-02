@@ -1,14 +1,13 @@
 // https://www.acmicpc.net/problem/2346
-
 const filePath = process.platform === 'linux' ? 0 : 'input.txt';
 const input = require('fs').readFileSync(filePath).toString().split('\n');
 
 const [n, ...numsList] = input;
 const arr = numsList.map((e) => e.split(' ').map(Number))[0];
 
-function solution(arr) {
-  const queue = Array.from({ length: arr.length }, (v, i) => i + 1);
-  let answer = [];
+function solution(n, arr) {
+  const queue = Array.from({ length: n }, (v, i) => i + 1);
+  const answer = [];
   let num = queue.shift();
   while (queue.length > 0) {
     answer.push(num);
