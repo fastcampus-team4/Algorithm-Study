@@ -1,5 +1,6 @@
 // 괄호의 값 : https://www.acmicpc.net/problem/2504
 
+// 모르겠음.. 다시 풀어보자
 let filePath = process.platform === "linux" ? 0 : "./input.txt";
 let input = require("fs").readFileSync(filePath).toString().trim();
 
