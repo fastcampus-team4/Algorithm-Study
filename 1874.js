@@ -1,36 +1,30 @@
-const filePath = process.platform === 'linux' ? 0 : './input.txt';
-const [n, ...array] = require('fs')
-  .readFileSync(filePath)
-  .toString()
-  .trim()
-  .split('\n')
-  .map(Number);
+// https://www.acmicpc.net/problem/1874
+const filePath = process.platform === 'linux' ? 0 : 'input.txt';
+const input = require('fs').readFileSync(filePath).toString().split('\n').map(Number);
 
-let max = 0;
-const stack = [];
-const answer = [];
+const [n, ...nums] = input;
 
-for (let i = 0; i < array.length; i++) {
-  if (array[i] > max) {
-    for (let j = max + 1; j <= array[i]; j++) {
-      stack.push(j);
+function solution(n, nums) {
+  let stack = [];
+  let answer = [];
+  let number = 1;
+
+  for (let i = 0; i < nums.length; i++) {
+    while (number <= nums[i]) {
+      stack.push(number);
       answer.push('+');
+      number++;
     }
-    stack.pop();
+
+    let stackPop = stack.pop();
     answer.push('-');
-    max = array[i];
-  }
-  if (array[i] < max) {
-    if (stack.pop() === array[i]) {
-      answer.push('-');
-    } else {
-      console.log('NO');
-      return;
+
+    if (stackPop !== nums[i]) {
+      answer = ['NO'];
+      break;
     }
   }
+
+  return answer.join('\n');
 }
-if (stack.length !== 0) {
-  console.log('NO');
-} else {
-  console.log(answer.join('\n'));
-}
+console.log(solution(n, nums));
