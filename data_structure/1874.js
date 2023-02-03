@@ -9,9 +9,10 @@ function solution(n, nums) {
   let answer = [];
   let number = 1;
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < n; i++) {
     while (number <= nums[i]) {
       stack.push(number);
+
       answer.push('+');
       number++;
     }
