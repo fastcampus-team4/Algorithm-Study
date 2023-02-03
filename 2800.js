@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/2800
 const filePath = process.platform === 'linux' ? 0 : 'input.txt';
-const input = require('fs').readFileSync(filePath).toString().split('');
+const input = require('fs').readFileSync(filePath).toString().trim();
 
 const solution = (str) => {
   const stack = [];
