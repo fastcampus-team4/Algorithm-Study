@@ -1,3 +1,5 @@
+//시간 초과 떠서 class로 다시 풀어야함
+
 const filePath =
   process.platform === "linux"
     ? 0

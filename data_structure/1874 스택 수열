@@ -1,0 +1,48 @@
+const filePath =
+  process.platform === "linux"
+    ? 0
+    : "/Users/gimjiwon/Desktop/algorithm/input.txt";
+
+const [n, ...array] = require("fs")
+  .readFileSync(filePath)
+  .toString()
+  .trim()
+  .split("\n")
+  .map(Number);
+
+const stack = [];
+const answer = [];
+
+console.log(array);
+//4일 때 [1,2,3] max 4
+//3일 때
+//6일 때 [1,2,3,5] max 6
+//8일 때 [1,2,3,4,5,7,8] max 8
+//7일 때
+
+let max = 0;
+for (let i = 0; i < array.length; i++) {
+  if (array[i] > max) {
+    for (let j = max + 1; j <= array[i]; j++) {
+      stack.push(j);
+      answer.push("+");
+    }
+    stack.pop();
+    answer.push("-");
+    max = array[i];
+  }
+  if (array[i] < max) {
+    if (stack.pop() === array[i]) {
+      answer.push("-");
+    } else {
+      console.log("NO");
+      return;
+    }
+  }
+}
+
+if (stack.length !== 0) {
+  console.log("NO");
+} else {
+  console.log(answer);
+}
